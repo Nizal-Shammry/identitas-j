@@ -19,6 +19,19 @@ Identitas provides the following functionality:
     Proquint are a transformation from numbers to a more pronounceable form.
        Proquint.IntegerConvert(0);
        ;; Proint for: 0  is: babab-babab
-       
        Proquint.IntegerConvert(Integer.MAX_VALUE); 
        ;; Proint for: 2147483647  is: luzuz-zuzuz
+       Proquint.IntegerConvert(Integer.MIN_VALUE);
+       ;; Proint for: -2147483648  is: mabab-babab
+       
+As an extension to original algorithm, we also provide support short and long transformations, useful depending on the size of identifier space required.
+        
+         Proquint.ShortConvert(0);
+         ;; Proshort for: 0  is: babab
+         Proquint.ShortConvert(Short.MAX_VALUE);
+         ;; Proshort for: 32767  is: luzuz
+         
+         Proquint.LongConvert(0);
+         ;;Proint for: 0  is: babab-babab-babab-babab
+         Proquint.LongConvert(Long.MAX_VALUE);
+         ;;Proint for: 9223372036854775807  is: luzuz-zuzuz-zuzuz-zuzuz
