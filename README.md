@@ -17,5 +17,8 @@ Identitas provides the following functionality:
 
 # Proquint
     Proquint are a transformation from numbers to a more pronounceable form.
-    
-    
+       Proquint.IntegerConvert(0);
+       ;; Proint for: 0  is: babab-babab
+       
+       Proquint.IntegerConvert(Integer.MAX_VALUE); 
+       ;; Proint for: 2147483647  is: luzuz-zuzuz
