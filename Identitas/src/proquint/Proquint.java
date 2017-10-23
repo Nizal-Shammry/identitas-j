@@ -19,7 +19,7 @@ public class Proquint {
 	
 	/** Map uints to consonants. */
 	static final char Int_to_consonant[] = {
-		'b', 'd', 'f', 'g',
+	    'b', 'd', 'f', 'g',
 	    'h', 'j', 'k', 'l',
 	    'm', 'n', 'p', 'r',
 	    's', 't', 'v', 'z'
