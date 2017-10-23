@@ -35,6 +35,9 @@ public class Proquint {
 	/** 
 	 * Convert an unsigned int to a proquint; the output is appended to
 	 * quint; sepChar will be omitted if -1. 
+	 * @param quint StringBuffer
+	 * @param i int
+	 * @param sepChar char
 	 */
 	public static void int_to_proint (StringBuffer quint /*output*/, int i, char sepChar){
 		
@@ -64,8 +67,9 @@ public class Proquint {
 	
 	/** 
 	 * Convert a proquint to an unsigned int (long).
-	 * @param String
-	 * @return number
+	 * @param pro_value StringReader
+	 * @return number StringReader
+	 * @throws IOException if the input is not valid 
 	 */
 	public static int proint_to_int (StringReader pro_value)  throws IOException {
 		
