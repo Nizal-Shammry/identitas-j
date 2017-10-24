@@ -13,39 +13,42 @@ import proquint.Proquint;
 
 public class Util {
 	
-	public static int min = Integer.MIN_VALUE;  //-2147483648
-	public static int max = Integer.MAX_VALUE; //  2147483647
+	public static int Integer_min = Integer.MIN_VALUE;  //-2147483648
+	public static int Integer_max = Integer.MAX_VALUE; //  2147483647
+	
 	
 	/**
 	 * Returns the division of integer-max by random number, both integer
-	 * @throws Exception 
 	 */
 	private static int max_val_by_10 (){
 		
-		int a = max / 10 ;
+		int a = Integer_max / 10 ;
 		return a;
 	}
 	
+	
+	
+	
 	/**
 	 * Returns a random int_proquint after validate it with Damm checksum.
-	 * @return int_proquint String
-	 * @throws IOException If the generated random number invalid
+	 * @return int_proquint - the string representation of the unsigned integer value
 	 */
 	public static String random_damm_proint() throws IOException {
-		
+
 		Random rand = new Random();
 		int  number = rand.nextInt(max_val_by_10());
-		
+
 		int sign = rand.nextInt(2);
 		if (sign == 1)
 			number = number * -1;	
+		
 		try {
 			
 			Damm.generateCheckSum(number);
 		} catch (IndexOutOfBoundsException e) {
 			throw new IndexOutOfBoundsException("IndexOutOfBoundsException: " + e.getMessage());
 		}
-		
+
 		 return int_to_proint(number);
 		
 	}
@@ -53,9 +56,9 @@ public class Util {
 	
      /**
       * Validate a given int_proquint with Damm checksum
-      * @param int_proquint String
+      * @param int_proquint - the string representation of the unsigned integer value
       * @return True if valid; otherwise false
-      * @throws Exception If Not valid entry
+      * @throws Exception If the input does not contain a string such as "babab-babab"
       */
 	public static boolean proint_damm_valid(String int_proquint) throws Exception {
 		
@@ -64,8 +67,8 @@ public class Util {
 		if(temp.length() == 11 && temp.matches("[A-Za-z -]+")){
 		StringReader proint_val = new StringReader(temp);
 		int return_proquint = Proquint.proint_to_int(proint_val);		
-		try {
-			
+		
+		try {	
 		 result = Damm.validate(return_proquint);
 		} catch (IndexOutOfBoundsException e) {
 			throw new IndexOutOfBoundsException("IndexOutOfBoundsException: " + e.getMessage());
@@ -81,15 +84,15 @@ public class Util {
 	}
 	
 	
-	       /*********************************************
-			********** Conversion numbers ***************
-			*********************************************/
+	/************************************************
+	 *********** Conversion numbers  ****************
+	 ************************************************/
 	
 	/**
 	 * Returns int_proquint (String) for a given int
-	 * @param number (int)
-	 * @return int_proquint (String)
-	 * @throws IOException if input out of the range
+	 * @param number - an integer to be converted to a int_proquint(string).
+	 * @return int_proquint - the string representation of the unsigned integer value
+	 * @throws IOException if the integer number is out of the range.
 	 */
 	public static String int_to_proint(int number) throws IOException{
 
@@ -98,8 +101,7 @@ public class Util {
 		
 		if (number <= Integer.MAX_VALUE || number < Integer.MIN_VALUE ) {			
 		
-			Proquint.int_to_proint(buffer, number, '-');
-			
+			Proquint.int_to_proint(buffer, number, '-');	
 		} 
 		else { 
 			throw new IOException("Number out of range: " + number);
@@ -110,10 +112,10 @@ public class Util {
 	}
 
 	/**
-	 * Returns short_proquint for a given short
-	 * @param number (short)
-	 * @return short_proquint (String)
-	 * @throws IOException if input out of the range 
+	 * Returns short_proquint for a given Short number, the passed argument to short_to_proshort must be casted to short type. 
+	 * @param number - a Short integer to be converted to a short_proquint(string).
+	 * @return short_proquint - the string representation of the Short value
+	 * @throws IOException if the input is out of the range for Short type. 
 	 */
 	public static String short_to_proshort (short number) throws IOException{
 		
@@ -126,10 +128,10 @@ public class Util {
 	
 	
 	/**
-	 * Returns a long_proquint for a given long
-	 * @param number (long)
-	 * @return long_proquint (String)
-	 * @throws IOException if input out of the range
+	 * Returns a long_proquint for a given Long
+	 * @param number - a long to be converted to a long_proquint(string).
+	 * @return long_proquint - the string representation of the Long value
+	 * @throws IOException if the input is out of the range for Long type.
 	 */
 	public static String long_to_prolong (long number) throws IOException {
 		
@@ -154,17 +156,19 @@ public class Util {
 	
 	/**
 	 * Returns int for a given int_proquint 
-	 * @param int_proquint String
-	 * @return number (int)
-	 * @throws IOException if the input is not valid 
+	 * @param int_proquint - the string representation of the unsigned integer value
+	 * @return number - the integer representation of the int_proquint (string)
+	 * @throws IOException If the input does not contain a string such as "babab-babab"
 	 */
 	public static int proint_to_Int(String int_proquint) throws IOException{
 	
 		int return_proquint;
 		String temp = int_proquint.toLowerCase();
+		
 		if(temp.length() == 11 && temp.matches("[A-Za-z -]+")){
-		StringReader proint_val = new StringReader(temp);
-		return_proquint = Proquint.proint_to_int(proint_val);
+			
+			StringReader proint_val = new StringReader(temp);
+			return_proquint = Proquint.proint_to_int(proint_val);
 
 		}
 		else { 
@@ -174,10 +178,10 @@ public class Util {
 	}
 	
 	/**
-	 * Returns short for a given short_proquint
-	 * @param short_proquint String
-	 * @return number (short)
-	 * @throws IOException if the input is not valid 
+	 * Returns Short for a given short_proquint
+	 * @param short_proquint - the string representation of the Short value
+	 * @return number - the Short representation of the short_proquint (string)
+	 * @throws IOException If the input does not contain a string such as "babab"
 	 */
 	public static int proshort_to_short(String short_proquint) throws IOException{
 	
@@ -195,10 +199,10 @@ public class Util {
 	}
 	
 	/**
-	 * Returns long for a given long_proquint
-	 * @param long_proquint String
-	 * @return number (long)
-	 * @throws IOException if the input is not valid 
+	 * Returns Long for a given long_proquint
+	 * @param long_proquint - the string representation of the Long value
+	 * @return number - the Long representation of the long_proquint (string)
+	 * @throws IOException If the input does not contain a string such as "babab-babab-babab-babab"
 	 */
 	public static long prolong_to_log(String long_proquint) throws IOException{
 		
@@ -232,8 +236,7 @@ public class Util {
 	
 	/**
 	 * Returns a random short_proquint
-	 * @return short_proquint String
-	 * @throws IOException If the generated random number is invalid
+	 * @return short_proquint - the string representation of the Short value
 	 */
 	public static String random_proshort() throws IOException {
 		
@@ -249,8 +252,7 @@ public class Util {
 	
 	/**
 	 * Returns random int_proquint
-	 * @return int_proquint String
-	 * @throws IOException If the generated random number is invalid
+	 * @return int_proquint - the string representation of the unsigned integer value
 	 */
 	public static String random_proint() throws IOException {
 		
@@ -266,8 +268,7 @@ public class Util {
 	
 	/**
 	 * Returns a random long_proquint
-	 * @return long_proquint String
-	 * @throws IOException If the generated random number is invalid
+	 * @return long_proquint - the string representation of the Long value
 	 */
 	public static String random_prolong() throws IOException {
 			
