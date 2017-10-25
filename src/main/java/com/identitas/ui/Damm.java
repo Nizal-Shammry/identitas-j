@@ -1,4 +1,4 @@
-package identitas;
+package com.identitas.ui;
 
 /**
  * The implementation of the damm algorithm based on the details on http://en.wikipedia.org/wiki/Damm_algorithm
@@ -61,7 +61,7 @@ public class Damm {
 	   */
 	  public static int calculateCheckSumDigit(long number) {
 		  String s = Long.toUnsignedString(number);
-	      return calculateCheckSumDigit(String.valueOf(number));
+	      return calculateCheckSumDigit(String.valueOf(s));
 		
 	    }
   
@@ -82,7 +82,7 @@ public class Damm {
 	   * @param number int
 	   * @return full number with the Damm checksum
 	   */
-	  public static int generateCheckSum(int number) {
+	  public int generateCheckSum(int number) {
 	        int checkSumDigit = calculateCheckSumDigit(number);
 	        return (number * 10) + checkSumDigit;
 	    }
