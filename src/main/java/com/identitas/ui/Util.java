@@ -34,7 +34,7 @@ public class Util {
 		return a;
 	}
 	
-	
+
 	/**
 	 * Returns a random int_proquint after validate it with Damm checksum.
 	 * @return int_proquint - the string representation of the unsigned integer value
