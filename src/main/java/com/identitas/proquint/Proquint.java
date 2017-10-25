@@ -1,6 +1,5 @@
 package com.identitas.proquint;
 
-
 /* This file is part of proquint: http://github.com/dsw/proquint .
 See ProquintLicense.txt for copyright and terms of use. */
 
