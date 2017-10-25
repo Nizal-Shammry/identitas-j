@@ -1,4 +1,5 @@
-package proquint;
+package com.identitas.proquint;
+
 
 /* This file is part of proquint: http://github.com/dsw/proquint .
 See ProquintLicense.txt for copyright and terms of use. */
@@ -39,9 +40,11 @@ public class Proquint {
 	 * @param i int
 	 * @param sepChar char
 	 */
-	public static void int_to_proint (StringBuffer quint /*output*/, int i, char sepChar){
+	public StringBuffer uint2quint (int i, char sepChar){
 		
 		int j;
+		
+		StringBuffer quint = new StringBuffer();
 
 	    final int MASK_FIRST4 = 0xF0000000;
 	    final int MASK_FIRST2 = 0xC0000000;
@@ -62,7 +65,7 @@ public class Proquint {
 	    j = i & MASK_FIRST2; i <<= 2; j >>>= 30; quint.append(Int_to_vowel[j]);
 	    j = i & MASK_FIRST4; i <<= 4; j >>>= 28; quint.append(Int_to_consonant[j]);
 		
-		
+		return quint;
 	}
 	
 	/** 
@@ -71,7 +74,7 @@ public class Proquint {
 	 * @return number StringReader
 	 * @throws IOException if the input is not valid 
 	 */
-	public static int proint_to_int (StringReader pro_value)  throws IOException {
+	public int quint2uint (StringReader pro_value)  throws IOException {
 		
 		int res = 0;
 
