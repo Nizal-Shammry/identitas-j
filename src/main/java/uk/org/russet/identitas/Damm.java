@@ -1,4 +1,4 @@
-package com.identitas.ui;
+package uk.org.russet.identitas;
 
 /**
  * The implementation of the damm algorithm based on the details on http://en.wikipedia.org/wiki/Damm_algorithm
@@ -25,8 +25,8 @@ public class Damm {
 	/**
      * Calculate the checksum digit from provided number
      * 
-     * @param number String
-     * @return calculated Damm checksum digit
+     * @param number - the String containing the unsigned integer.
+     * @return calculated Damm checksum digit.
      */
 	 public static int calculateCheckSumDigit(String number) {
 
@@ -46,8 +46,8 @@ public class Damm {
 	 
 	 /**
 	   * Calculate the checksum digit from provided number
-	   * @param number int
-	   * @return calculated Damm checksum digit
+	   * @param number - the integer to be converted to an unsigned string. 
+	   * @return calculated Damm checksum digit.
 	   */
 	  public static int calculateCheckSumDigit(int number) {
 		  String s = Integer.toUnsignedString(number);
@@ -56,8 +56,8 @@ public class Damm {
 
 	 /**
 	   * Calculate the checksum digit from provided number
-	   * @param number long
-	   * @return calculated Damm checksum digit
+	   * @param number - the long to be converted to an unsigned string. 
+	   * @return calculated Damm checksum digit.
 	   */
 	  public static int calculateCheckSumDigit(long number) {
 		  String s = Long.toUnsignedString(number);
@@ -68,8 +68,8 @@ public class Damm {
 	  /**
 	   * Calculate the checksum digit from provided number and return the full
 	   * number with the checksum
-	   * @param number String
-	   * @return full number with the Damm checksum
+	   * @param number - the String containing the integer representation to be checked with Damm checksum.
+	   * @return full number with the Damm checksum.
 	   */ 
 	  public static String generateCheckSum(String number) {
 	        int checkSumDigit = calculateCheckSumDigit(number);
@@ -79,10 +79,10 @@ public class Damm {
 	  /**
 	   * Calculate the checksum digit from provided number and return the full
 	   * number with the checksum
-	   * @param number int
-	   * @return full number with the Damm checksum
+	   * @param number - the integer to be checked with Damm checksum.
+	   * @return full number with the Damm checksum.
 	   */
-	  public int generateCheckSum(int number) {
+	  public static int generateCheckSum(int number) {
 	        int checkSumDigit = calculateCheckSumDigit(number);
 	        return (number * 10) + checkSumDigit;
 	    }
@@ -90,8 +90,8 @@ public class Damm {
 	  /**
 	     * Calculate the checksum digit from provided number and return the full
 	     * number with the checksum
-	     * @param number long
-	     * @return full number with the Damm checksum
+	     * @param number - the long to be checked with Damm checksum.
+	     * @return full number with the Damm checksum.
 	     */
 	    public static long generateCheckSum(long number) {
 	        int checkSumNumber = calculateCheckSumDigit(number);
@@ -101,8 +101,8 @@ public class Damm {
 	    /**
 	     * validates the number using the last digit as the Damm checksum
 	     * 
-	     * @param number String
-	     * @return True if valid; otherwise false
+	     * @param number - the String containing the integer representation to be validated.
+	     * @return True if valid; otherwise false.
 	     */
 	    public static boolean validate(String number) {
 	        return calculateCheckSumDigit(number) == 0;
@@ -111,8 +111,8 @@ public class Damm {
 	    /**
 	     * validates the number using the last digit as the Damm checksum
 	     * 
-	     * @param number int
-	     * @return True if valid; otherwise false
+	     * @param number - the integer to be validated with Damm checksum.
+	     * @return True if valid; otherwise false.
 	     */
 	    public static boolean validate(int number) {
 	        return calculateCheckSumDigit(number) == 0;
@@ -121,8 +121,8 @@ public class Damm {
 	    /**
 	     * validates the number using the last digit as the Damm checksum
 	     * 
-	     * @param number long
-	     * @return True if valid; otherwise false
+	     * @param number - the long to be validated with Damm checksum.
+	     * @return True if valid; otherwise false.
 	     */
 	    public static boolean validate(long number) {
 
