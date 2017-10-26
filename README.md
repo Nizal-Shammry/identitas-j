@@ -1,7 +1,7 @@
 # identitas-j
 Make identifers
 
-A set of libraries for coining, manipulating and checking identifiers.
+A set of libraries for coining, manipulating and checking identifiers. More details available at https://arxiv.org/abs/1709.09021
 
 An identifier is short string or integer which is used to represent other things, called here the identifed, such as database records, terms in an ontology or physical entities such as a people or proteins. Identifiers are semantics-free -- that is they do not depend on the characteristics of the thing that they represent; therefore, they can remain constant, even while the identified changes.
 
