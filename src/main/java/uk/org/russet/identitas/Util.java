@@ -6,15 +6,15 @@ import java.util.Random;
 import uk.org.russet.proquint.Proquint;
 import uk.org.russet.identitas.Damm;
 /**
- * The implementation of the Identitas based on the details on https://arxiv.org/abs/1709.09021
+ * The implementation of the Identitas based on the details on <a href="https://arxiv.org/abs/1709.09021">https://arxiv.org/abs/1709.09021</a>
  * @author Nizal Alshammry and Phillip Lord
  * @version 1.0
  */
 
 public class Util {
 	
-	public final static int INTEGER_MIN = Integer.MIN_VALUE;  //-2147483648
-	public final static int INTEGER_MAX = Integer.MAX_VALUE; //  2147483647
+	public static int INTEGER_MIN = Integer.MIN_VALUE;  //-2147483648
+	public static int INTEGER_MAX = Integer.MAX_VALUE; //  2147483647
 	
 	
 	
@@ -54,9 +54,9 @@ public class Util {
 	
      /**
       * Validate a given int_proquint with Damm checksum
-      * @param int_proquint - the String representation of the unsigned integer value.
+      * @param int_proquint the String representation of the unsigned integer value.
       * @return True if valid; otherwise false
-      * @throws Exception If the input does not contain a string such as "babab-babab".
+      * @throws Exception If the input does not contain a set of strings of alternating consonants and vowels, such as "babab-babab".
       */
 	public static boolean prointDammValid(String int_proquint) throws Exception {
 		
@@ -88,7 +88,7 @@ public class Util {
 	
 	/**
 	 * Returns int_proquint (String) for a given integer.
-	 * @param number - the integer to be converted to an int_proquint(String).
+	 * @param number  the integer to be converted to int_proquint(String).
 	 * @return int_proquint - the String representation of the unsigned integer value.
 	 * @throws IOException If the integer number is out of the range.
 	 */
@@ -110,9 +110,9 @@ public class Util {
 	}
 
 	/**
-	 * Returns short_proquint for a given Short number. The passed argument to short_to_proshort should be casted to short type to get short_proquint,
+	 * Returns short_proquint for a given Short number. The passed argument to short_to_proshort should be casted to short type to get a short_proquint,
 	 * for example shortToProshort((short) 1)
-	 * @param number - the Short integer to be converted to a short_proquint(String).
+	 * @param number the Short integer to be converted to a short_proquint(String).
 	 * @return short_proquint - the String representation of the Short value.
 	 * @throws IOException If the input is out of the range for Short type. 
 	 */
@@ -127,10 +127,10 @@ public class Util {
 	
 	
 	/**
-	 * Returns a long_proquint for a given Long value.
-	 * @param number - the  long to be converted to a long_proquint(String).
-	 * @return long_proquint - the String representation of the Long value.
-	 * @throws IOException If the input is out of the range for Long type.
+	 * Returns a long_proquint for a given long value.
+	 * @param number the  long to be converted to a long_proquint(String).
+	 * @return long_proquint - the String representation of the long value.
+	 * @throws IOException If the input is out of the range for long type.
 	 */
 	public static String longToProlong (long number) throws IOException {
 		
@@ -155,9 +155,9 @@ public class Util {
 	
 	/**
 	 * Returns integer for a given int_proquint.
-	 * @param int_proquint - the String representation of the unsigned integer value.
+	 * @param int_proquint the String representation of the unsigned integer value.
 	 * @return number - the integer representation of the int_proquint(String).
-	 * @throws IOException If the input does not contain a string such as "babab-babab".
+	 * @throws IOException If the input does not contain a set of strings of alternating consonants and vowels, such as "babab-babab".
 	 */
 	public static int prointToInt(String int_proquint) throws IOException{
 		
@@ -178,9 +178,9 @@ public class Util {
 	
 	/**
 	 * Returns Short for a given short_proquint.
-	 * @param short_proquint - the String representation of the Short value.
+	 * @param short_proquint the String representation of the Short value.
 	 * @return number - the Short representation of the short_proquint(String).
-	 * @throws IOException If the input does not contain a String such as "babab".
+	 * @throws IOException If the input does not contain a set of strings of alternating consonants and vowels, such as "babab".
 	 */
 	public static int proshortToShort(String short_proquint) throws IOException{
 	
@@ -198,10 +198,10 @@ public class Util {
 	}
 	
 	/**
-	 * Returns Long for a given long_proquint.
-	 * @param long_proquint - the String representation of the Long value.
-	 * @return number - the Long representation of the long_proquint(String).
-	 * @throws IOException If the input does not contain a String such as "babab-babab-babab-babab".
+	 * Returns long for a given long_proquint.
+	 * @param long_proquint the String representation of the long value.
+	 * @return number - the long representation of the long_proquint(String).
+	 * @throws IOException If the input does not contain a set of strings of alternating consonants and vowels, such as "babab-babab-babab-babab".
 	 */
 	public static long prolongToLong(String long_proquint) throws IOException{
 		
@@ -239,7 +239,7 @@ public class Util {
 	
 	/**
 	 * Returns a random short_proquint.
-	 * @return short_proquint - the string representation of the Short value.
+	 * @return short_proquint - the String representation of the Short value.
 	 */
 	public static String randomProshort() throws IOException {
 		
@@ -271,7 +271,7 @@ public class Util {
 	
 	/**
 	 * Returns a random long_proquint.
-	 * @return long_proquint - the String representation of the Long value.
+	 * @return long_proquint - the String representation of the long value.
 	 */
 	public static String randomProlong() throws IOException {
 			
