@@ -129,5 +129,4 @@ public class Damm {
 	    	return calculateCheckSumDigit(number) == 0;
 	    
 	    }
-
 }
