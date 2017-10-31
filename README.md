@@ -9,30 +9,36 @@ Identifier schemes can have many different characteristics, many of which confli
 
 Identitas provides the following functionality:
 
-* Proquint: functions to convert between numbers and an equivalent "pronouceable" version, following the http://arxiv.org/html/0901.4016 scheme.
-* Damm: check-digits using the http://arxiv.org/html/0901.4016 algorithm.
-* Core: combining all of these!
+* Proquint: converts between proquint, and decimal strings. Following the http://arxiv.org/html/0901.4016 scheme. 
+* Damm: check-digits using the https://en.wikibooks.org/wiki/Algorithm_Implementation/Checksums/Damm_Algorithm algorithm.
+* Util: functions to convert between numbers (Integer, Short, Long) and an equivalent "pronouceable" version. 
     
 # Usage
 
 # Proquint
   Proquint are a transformation from numbers to a more pronounceable form.
-      
-       Proquint.IntegerConvert(0);
-       ;; Proint for: 0  is: babab-babab
-       Proquint.IntegerConvert(Integer.MAX_VALUE); 
-       ;; Proint for: 2147483647  is: luzuz-zuzuz
-       Proquint.IntegerConvert(Integer.MIN_VALUE);
-       ;; Proint for: -2147483648  is: mabab-babab
+          
+          Util.Int_to_proint(0);
+           ;; babab-babab
+          Util.Int_to_proint(Integer.MAX_VALUE); 
+           ;;  luzuz-zuzuz
+          Util.Int_to_proint(Integer.MIN_VALUE);
+           ;; mabab-babab
+       
        
 As an extension to original algorithm, we also provide support short and long transformations, useful depending on the size of identifier space required.
+    
+           Util.Short_to_prshort(0);
+            ;;  babab
+           Util.Short_to_prshort(Short.MAX_VALUE);
+            ;; luzuz
+           Util.Short_to_prshort(Short.MIN_VALUE);
+            ;; mabab
+     
+           Util.Long_to_prolong(0);
+            ;; babab-babab-babab-babab
+           Util.Long_to_prolong(Long.MAX_VALUE);
+            ;; luzuz-zuzuz-zuzuz-zuzuz
+           Util.Long_to_prolong(Long.MIN_VALUE);
+           ;; mabab-babab-babab-babab
         
-         Proquint.ShortConvert(0);
-         ;; Proshort for: 0  is: babab
-         Proquint.ShortConvert(Short.MAX_VALUE);
-         ;; Proshort for: 32767  is: luzuz
-         
-         Proquint.LongConvert(0);
-         ;;Proint for: 0  is: babab-babab-babab-babab
-         Proquint.LongConvert(Long.MAX_VALUE);
-         ;;Proint for: 9223372036854775807  is: luzuz-zuzuz-zuzuz-zuzuz
