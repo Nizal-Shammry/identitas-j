@@ -84,7 +84,11 @@ public class Damm {
 	   */
 	  public static int generateCheckSum(int number) {
 	        int checkSumDigit = calculateCheckSumDigit(number);
-	        return (number * 10) + checkSumDigit;
+		String uns_number = Integer.toUnsignedString(number);
+	        long temp = Long.parseLong(uns_number);
+	        long number_checked = ((temp * 10) + checkSumDigit);
+	        int result = (int) (number_checked & 0xFFFFFFFF);
+	        return result;  
 	    }
 
 	  /**
