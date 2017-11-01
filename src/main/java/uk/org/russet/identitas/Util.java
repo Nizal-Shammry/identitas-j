@@ -32,7 +32,8 @@ public class Util {
 	 * @return int_proquint - the String representation of the unsigned integer value.
 	 */
 	public static String randomDammProint() throws IOException {
-
+		
+		int checked_num;
 		Random rand = new Random();
 		int  number = rand.nextInt(max_val_by_10());
 
@@ -42,12 +43,12 @@ public class Util {
 		
 		try {
 			
-			Damm.generateCheckSum(number);
+		   checked_num = Damm.generateCheckSum(number);
 		} catch (IndexOutOfBoundsException e) {
 			throw new IndexOutOfBoundsException("IndexOutOfBoundsException: " + e.getMessage());
 		}
 
-		 return intToProint(number);
+		 return intToProint(checked_num);
 		
 	}
 	
