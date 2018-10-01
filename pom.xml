@@ -26,4 +26,29 @@
   <name>Identitas-j</name>
   <description>Identitas: a set of libraries for coining, manipulating and checking identifiers.</description>
   <url>https://github.com/Nizal-Shammry/identitas-j</url>
+  <licenses>
+    <license>
+      <name>LGPL 3.0</name>
+      <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Nizal Alshammry</name>
+      <email>n.k.e.alshammry2@newcastle.ac.uk</email>
+      <organization></organization>
+      <organizationUrl>http://www.newcastle.ac.uk</organizationUrl>
+    </developer>
+    <developer>
+      <name>Phillip Lord</name>
+      <email>phillip.lord@newcastle.ac.uk</email>
+      <organization>Newcastle University</organization>
+      <organizationUrl>http://www.newcastle.ac.uk</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git://git@github.com:Nizal-Shammry/identitas.git</connection>
+    <developerConnection>scm:git:ssh://github.com:Nizal-Shammry/identitas.git</developerConnection>
+    <url>https://github.com/Nizal-Shammry/identitas/tree/master</url>
+  </scm>
 </project>
