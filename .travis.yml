@@ -1,4 +1,2 @@
 language: java
-install:
-# Run original install command but without GPG signing
-- ./mvn install -DskipTests=true -Dgpg.skip=true
+
